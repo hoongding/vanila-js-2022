@@ -6,8 +6,8 @@ const HIDDEN_CLASSNAME = "hidden"; //Only contains String, use upper case
 const USERNAME_KEY = "username";
 
 function onLoginSubmit(event) {
-  event.preventDefault(); //Prevent the default behavior of the event
   loginForm.classList.add("HIDDEN_CLASSNAME");
+  event.preventDefault(); //Prevent the default behavior of the event
   const username = loginInput.value;
   localStorage.setItem(USERNAME_KEY, username);
   paintGreetings(username);
@@ -23,6 +23,7 @@ const savedUsername = localStorage.getItem(USERNAME_KEY);
 if (savedUsername === null) {
   loginForm.classList.remove(HIDDEN_CLASSNAME);
   loginForm.addEventListener("submit", onLoginSubmit);
+  loginForm.classList.add("HIDDEN_CLASSNAME");
 } else {
   paintGreetings(savedUsername);
 }

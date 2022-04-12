@@ -1,3 +1,12 @@
 .hidden {
   display: none;
 }
+
+#greeting {
+  text-align: center;
+  font-size: xx-large;
+}
+
+#todo-form {
+  display: flex;
+}
